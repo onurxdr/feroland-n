@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>FEROLANDIN</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      gap: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    img {
+      width: 300px;
+      height: auto;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: transform 0.2s;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #c2185b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ben Fero Fotoğrafı -->
+  <img src="benfero.png" alt="Ben Fero" onclick="playQuote()">
+
+  <!-- Şarkı Tam Hali Butonu -->
+  <button onclick="playFullSong()">ŞARKI TAM HALİ</button>
+
+  <!-- Kısa Replik Sesi -->
+  <audio id="quoteAudio">
+    <source src="kısa.mp4" type="audio/mpeg">
+    Tarayıcınız audio elementini desteklemiyor.
+  </audio>
+
+  <!-- Tam Şarkı -->
+  <audio id="fullSongAudio">
+    <source src="şarkıtamhali.mp4" type="audio/mpeg">
+    Tarayıcınız audio elementini desteklemiyor.
+  </audio>
+
+  <script>
+    function playQuote() {
+      const quote = document.getElementById("quoteAudio");
+      quote.currentTime = 0;
+      quote.play();
+    }
+
+    function playFullSong() {
+      const song = document.getElementById("fullSongAudio");
+      song.currentTime = 0;
+      song.play();
+    }
+  </script>
+
+</body>
+</html>
